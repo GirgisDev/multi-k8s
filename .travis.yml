@@ -6,7 +6,7 @@ services:
 before_install: 
   - docker build -t gergis/client-test:latest -f ./client/Dockerfile.dev ./client
 script:
-  - docker run -e CI=true gergis/react-test npm test -- --coverage
+  - docker run -e CI=true gergis/client-test npm test
 after_success: 
   - docker build -t gergis/multi-container-client ./client
   - docker build -t gergis/multi-container-nginx ./nginx
