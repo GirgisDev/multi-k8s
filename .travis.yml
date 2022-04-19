@@ -23,6 +23,7 @@ script:
   - docker run -e CI=true gergis/react-test npm test
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: bach ./deploy.sh
   on:
