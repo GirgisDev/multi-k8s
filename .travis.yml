@@ -15,7 +15,7 @@ before_install:
   # should run in cloud console
   - gcloud config set project multi-k8s-347511
   - gcloud config set compute/zone us-central1-c
-  - gloud container clusters get-credentials multi-cluster
+  - gcloud container clusters get-credentials multi-cluster
   # end of commands that should run in cloud console
   - echo "$DOCKER_PASSWORD" | docker ogin -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t gergis/react-test -f ./client/Dockerfile.dev ./client
