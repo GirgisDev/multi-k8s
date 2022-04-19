@@ -11,6 +11,6 @@ docker push gergis/multi-container-server:$SHA
 docker push gergis/multi-container-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=stephengrider/multi-server:$SHA
-kubectl set image deployments/client-deployment client=stephengrider/multi-client:$SHA
-kubectl set image deployments/worker-deployment worker=stephengrider/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=gergis/multi-container-server:$SHA
+kubectl set image deployments/client-deployment client=gergis/multi-container-client:$SHA
+kubectl set image deployments/worker-deployment worker=gergis/multi-container-worker:$SHA
