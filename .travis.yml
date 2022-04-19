@@ -17,7 +17,7 @@ before_install:
   - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials multi-cluster
   # end of commands that should run in cloud console
-  - echo "$DOCKER_PASSWORD" | docker ogin -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t gergis/react-test -f ./client/Dockerfile.dev ./client
 script:
   - docker run -e CI=true stephengrider/react-test npm test
